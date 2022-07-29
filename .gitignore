@@ -1,0 +1,6 @@
+# Editor settings #
+.vs/
+
+# Build artifacts #
+out/
+build/

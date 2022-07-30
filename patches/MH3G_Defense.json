@@ -1,0 +1,13 @@
+{
+"title": "MH3G Defense",
+"desc": "Reduces defense to 1 (from 50), matching the japanese release of the game.",
+"patches": [
+    {
+      "payload": "01",
+      "addresses": [
+        "0x00463197",
+        "0x00B8005B"
+      ]
+    }
+  ]
+}

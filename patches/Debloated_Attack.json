@@ -1,0 +1,13 @@
+{
+"title": "Debloated attack",
+"desc": "Changes weapon display stats to show real attack values.",
+"patches": [
+    {
+      "payload": "00 00 00 64",
+      "addresses": [
+        "0x0017C9FC"
+      ],
+      "count": 14
+    }
+  ]
+}

@@ -2,8 +2,7 @@
 # and include sub-projects here.
 #
 cmake_minimum_required (VERSION 3.8)
-
-project ("MH3U_WiiU_Patcher")
+project ("MH3U_WiiU_Patcher" VERSION 1.0)
 
 # Include sub-projects.
 add_subdirectory ("MH3U_WiiU_Patcher")

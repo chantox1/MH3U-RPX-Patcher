@@ -9,7 +9,7 @@ bool existsAndIsDir(const fs::path path) {
 			if (fs::is_directory(path)) {
 				return true;
 			}
-			std::cerr << path << " is not a directory.\n";
+			std::cerr << path << " is not a directory." << endl;
 			return false;
 		}
 	}
@@ -17,7 +17,7 @@ bool existsAndIsDir(const fs::path path) {
 		cerr << fe.what() << endl;
 		return false;
 	}
-	cout << path << " does not exist.\n";
+	cout << "Directory " << path << " does not exist." << endl;
 	return false;
 }
 
@@ -27,7 +27,7 @@ bool existsAndIsFile(const fs::path path) {
 			if (fs::is_regular_file(path)) {
 				return true;
 			}
-			std::cerr << path << " is not a file.\n";
+			std::cerr << path << " is not a file." << endl;
 			return false;
 		}
 	}
@@ -35,7 +35,7 @@ bool existsAndIsFile(const fs::path path) {
 		cerr << fe.what() << endl;
 		return false;
 	}
-	cout << path << " does not exist.\n";
+	cout << "File " << path << " does not exist." << endl;
 	return false;
 }
 

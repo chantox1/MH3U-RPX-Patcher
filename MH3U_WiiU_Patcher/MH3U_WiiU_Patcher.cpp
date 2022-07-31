@@ -91,9 +91,21 @@ int main(int argc, char *argv[]) {
 			 << "or provide the path manually." << endl;
 		return EXIT_SUCCESS;
 	}
-	fs::path rpxPath(vm["rpx"].as<string>());
+
 	fs::path patchDir("patches");
-	if (!existsAndIsFile(rpxPath) || !existsAndIsDir(patchDir)) {
+	if (!existsAndIsDir(patchDir)) {
+		cout << "searching..." << endl;
+		fs::path workingDir(argv[0]);
+		workingDir.remove_filename();
+		fs::current_path(workingDir);
+		if (!existsAndIsDir(patchDir)) {
+			return EXIT_FAILURE;
+		}
+	}
+	cout << "Found patch directory." << endl;
+
+	fs::path rpxPath(vm["rpx"].as<string>());
+	if (!existsAndIsFile(rpxPath)) {
 		return EXIT_FAILURE;
 	}
 
@@ -154,6 +166,7 @@ int main(int argc, char *argv[]) {
 					}
 				}
 			}
+			cout << endl;
 		}
 		it++;
 	}

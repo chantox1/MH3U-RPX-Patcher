@@ -1,6 +1,5 @@
 ﻿#include "MH3U_WiiU_Patcher.h"
 #include <fstream>
-#include <sstream>
 #include <iostream>
 #include <filesystem>
 #include <boost/json.hpp>
@@ -98,12 +97,6 @@ int main(int argc, char *argv[]) {
 		return EXIT_FAILURE;
 	}
 
-	/*
-	int error = decompressRPX(rpxPath);
-	if (error) {
-		return error;
-	}
-	*/
 	FILE *code = NULL;  // We'll worry about this when we need it
 
 	fs::recursive_directory_iterator it(patchDir), end;
@@ -166,15 +159,6 @@ int main(int argc, char *argv[]) {
 	}
 	if (code == NULL) {
 		cout << "No patches were applied." << endl;
-		/*
-		try {
-			fs::remove("code.bin");
-		}
-		catch (const fs::filesystem_error &fe) {
-			cerr << fe.what() << endl;
-			return fe.code().value();
-		}
-		*/
 		return EXIT_SUCCESS;
 	}
 	fclose(code);
